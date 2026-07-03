@@ -27,7 +27,7 @@ Movie Title → FastAPI Backend → TF-IDF & Cosine Similarity → TMDB API → 
 
 ## 🌐 Live Demo
 
-* **Frontend:** *[Add your frontend URL](https://movie-recommender-frontend-rka7.onrender.com/)*
+* **Frontend:** (https://movie-recommender-frontend-rka7.onrender.com/)*
 
 ## 📊 Languages Used
 
