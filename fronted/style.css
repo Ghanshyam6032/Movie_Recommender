@@ -1,0 +1,100 @@
+/* ==========================================================================
+   CineMatch Complete Production Design Custom Styles System
+   ========================================================================== */
+
+:root {
+    --bg-dark-radial: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0f172a 100%);
+    --bg-glass-panel: rgba(30, 41, 59, 0.7);
+    --bg-glass-input: rgba(15, 23, 42, 0.6);
+    --bg-glass-input-focus: rgba(15, 23, 42, 0.8);
+    --border-glass-default: rgba(255, 255, 255, 0.08);
+    --border-glass-input: rgba(255, 255, 255, 0.1);
+    
+    --theme-indigo-accent: #6366f1;
+    --theme-indigo-glow-alpha: rgba(99, 102, 241, 0.2);
+    --theme-card-hover-border: rgba(99, 102, 241, 0.4);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg-dark-radial);
+    min-height: 100vh;
+}
+
+/* Application Document Scrollbar Strips */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+/* Glassmorphism Structural Properties */
+.glass-panel {
+    background: var(--bg-glass-panel);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-glass-default);
+}
+
+.glass-input {
+    background: var(--bg-glass-input);
+    border: 1px solid var(--border-glass-input);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-input:focus {
+    border-color: var(--theme-indigo-accent);
+    box-shadow: 0 0 20px var(--theme-indigo-glow-alpha);
+    background: var(--bg-glass-input-focus);
+}
+
+/* Dynamic Cards Entrance Transformations */
+.movie-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    animation: cardEntranceAnimation 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.movie-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--theme-card-hover-border);
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.7);
+}
+
+/* Font Mask Text Clipping Properties */
+.text-gradient-hero {
+    background: linear-gradient(to b, #ffffff, #e2e8f0, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-gradient-brand {
+    background: linear-gradient(to r, #ffffff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Animation Matrices definitions */
+@keyframes globalFadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardEntranceAnimation {
+    from { opacity: 0; transform: scale(0.97) translateY(15px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-fade-in {
+    animation: globalFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
